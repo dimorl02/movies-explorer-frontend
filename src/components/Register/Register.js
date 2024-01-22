@@ -20,7 +20,7 @@ function Register() {
           type="text"
           minLength="2"
           maxLength="40"
-          required
+          required="true"
           placeholder="имя" 
         />
         <span className="form__input-error">Заполните поле</span>
@@ -32,7 +32,7 @@ function Register() {
           className="form__input"
           id="email-input"
           type="email"
-          required
+          required="true"
           placeholder="почта" 
         />
         <span className="form__input-error">Адрес электронной почты должен содержать символ "@".</span>
@@ -44,7 +44,7 @@ function Register() {
           className="form__input"
           id="password-input"
           type="password"
-          required
+          required="true"
           placeholder="пароль" 
         />
         <span className="form__input-error">Заполните поле</span>

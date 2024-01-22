@@ -20,8 +20,8 @@
 
 ### ССылка на репозиторий:
 
-- https://
+- https://github.com/dimorl02/movies-explorer-frontend
 
 ### ССылка на пуллреквест в ветке LEVEL-2:
 
-- https://
+- https://github.com/dimorl02/movies-explorer-frontend/pull/1

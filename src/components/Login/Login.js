@@ -8,7 +8,7 @@ function Login() {
       title="Рады видеть!"
       buttonText="Войти"
       question="Еще не зарегистрированы?"
-      linkText=" Регистрация"
+      linkText="Регистрация"
       link="/signup"
     >
       <label className="form__label">
@@ -18,7 +18,7 @@ function Login() {
           className="form__input"
           id="email-input"
           type="email"
-          required
+          required="true"
           placeholder="почта" 
         />
         <span className="form__input-error">Адрес электронной почты должен содержать символ "@".</span>
@@ -30,7 +30,7 @@ function Login() {
           className="form__input"
           id="password-input"
           type="password"
-          required
+          required="true"
           placeholder="пароль" 
         />
         <span className="form__input-error">Введите пароль</span>

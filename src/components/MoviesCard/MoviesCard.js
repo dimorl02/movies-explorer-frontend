@@ -10,7 +10,7 @@ function MoviesCard() {
           <span className="card__duration">0ч 42м</span>
         </div>
 
-        <img alt="фотокарточка фильма" className="card__image" />
+        <img alt="" className="card__image" />
         <div className="card__container">
           <button type="button" className="card__like-button"></button>
         </div>
