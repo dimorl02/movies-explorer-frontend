@@ -61,7 +61,7 @@
 }
 
 .profile__input:focus {
-  background-color: rgba(43, 224, 128, 0.4);
+  background: #3f3d3d;
 }
 
 .profile__border {

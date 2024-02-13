@@ -6,38 +6,24 @@ import account from "../../images/profile.png";
 import menu from "../../images/menu-button.svg";
 import Navigation from "../Navigation/Navigation";
 
-function Header() {
-  const location = useLocation();
+function Header({ loggedIn }) {
+  // Функция смены цвета активной ссылки
+  const setActiveColorLink = ({ isActive }) =>
+    isActive ? "header__button_active" : "header__button";
 
-  // Временная функция для проверки отображать первый хедер
-  const shouldShowFirstHeader = () => {
-    const { pathname } = location;
-    return pathname === "/";
-  };
-
-  // Временная функция для проверки отображать второй хедер
-  const shouldShowSecondHeader = () => {
-    const { pathname } = location;
-    return (
-      pathname === "/movies" ||
-      pathname === "/saved-movies" ||
-      pathname === "/profile"
-    );
-  };
-
-  const [isClicked, setIsClicked] = React.useState(false);
+  const [isOpened, setIsOpened] = React.useState(false);
 
   function handleOpen() {
-    setIsClicked(true);
+    setIsOpened(true);
   }
 
   function handleClose() {
-    setIsClicked(false);
+    setIsOpened(false);
   }
 
   return (
     <>
-      {shouldShowFirstHeader() && (
+      {!loggedIn ? (
         <header className="header" id="header">
           <Link to="/" className="form__logo">
             <img src={logo} alt="логотип сайта" />
@@ -51,26 +37,16 @@ function Header() {
             </Link>
           </div>
         </header>
-      )}
-
-      {shouldShowSecondHeader() && (
+      ) : (
         <header className="header header_gray" id="header-gray">
           <Link to="/" className="form__logo">
             <img src={logo} alt="логотип сайта" />
           </Link>
           <div className="header__button-container_films">
-            <NavLink
-              to="/movies"
-              className="header__button"
-              activeClassName="header__button_active"
-            >
+            <NavLink to="/movies" className={setActiveColorLink}>
               Фильмы
             </NavLink>
-            <NavLink
-              to="/saved-movies"
-              className="header__button"
-              activeClassName="header__button_active"
-            >
+            <NavLink to="/saved-movies" className={setActiveColorLink}>
               Сохранённые фильмы
             </NavLink>
           </div>
@@ -86,7 +62,7 @@ function Header() {
               <img src={menu} alt="меню" />
             </button>
           </div>
-          {isClicked ? <Navigation handleClose={handleClose} /> : ""}
+          {isOpened ? <Navigation handleClose={handleClose} /> : ""}
         </header>
       )}
     </>

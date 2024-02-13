@@ -8,10 +8,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .card__image {
-  background-image: url(../../images/dmitry.png);
+  /*background-image: url(../../images/dmitry.png);*/
   object-fit: cover;
   background-size: cover;
   background-position: bottom;
@@ -55,19 +56,23 @@
   align-items: center;
 }
 
-.card__button-delete {
-  background-image: url("../../images/delete-button.svg");
+.card__like-remove {
   width: 100px;
   height: 29px;
   border: none;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   background-color: transparent;
   cursor: pointer;
+  position: absolute;
+  bottom: -6px;
+  right: 32%;
 }
 
 .card__like-button {
   margin-right: 6px;
+  margin-top: 8px;
   background-image: url("../../images/like.svg");
   width: 100px;
   height: 29px;
@@ -86,7 +91,7 @@
   background-image: url("../../images/like-active.svg");
 }
 
-.card__button-delete:hover {
+.card__like-remove:hover {
   opacity: 0.6;
 }
 

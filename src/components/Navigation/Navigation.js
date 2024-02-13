@@ -4,6 +4,9 @@ import "./Navigation.css";
 import account from "../../images/profile.png";
 
 function Navigation({ handleClose }) {
+  const setActiveColorLink = ({ isActive }) =>
+    isActive ? "navigation__link_active" : "navigation__link";
+
   return (
     <div className="navigation__page-overlay">
       <div className="navigation__overlay-container"></div>
@@ -13,25 +16,20 @@ function Navigation({ handleClose }) {
           onClick={handleClose}
         ></button>
         <nav className="navigation__links">
-          <NavLink
-            exact
-            to="/"
-            className="navigation__link"
-            activeClassName="navigation__link_active"
-          >
+          <NavLink to="/" className={setActiveColorLink} onClick={handleClose}>
             Главная
           </NavLink>
           <NavLink
             to="/movies"
-            className="navigation__link"
-            activeClassName="navigation__link_active"
+            className={setActiveColorLink}
+            onClick={handleClose}
           >
             Фильмы
           </NavLink>
           <NavLink
             to="/saved-movies"
-            className="navigation__link"
-            activeClassName="navigation__link_active"
+            className={setActiveColorLink}
+            onClick={handleClose}
           >
             Сохранённые фильмы
           </NavLink>

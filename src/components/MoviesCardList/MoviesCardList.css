@@ -2,7 +2,6 @@
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .cards__list {
@@ -11,7 +10,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 37px 28px;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .cards__button-container {
@@ -51,7 +50,6 @@
     margin: 81px auto -37px;
     grid-template-columns: repeat(2, 339px);
     gap: 30px 30px;
-    max-height: 1238px;
   }
 
   .cards__button-container {
@@ -61,11 +59,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .card {
-    height: 237px;
-  }
   .cards__list {
-    max-height: 1307px;
     margin: 50px auto 10px;
     grid-template-columns: repeat(1, 300px);
     gap: 18px;

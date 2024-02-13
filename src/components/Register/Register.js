@@ -1,15 +1,32 @@
 import React from "react"
-import "../Form/Form.css"
 import Form from "../Form/Form"
+import "../Form/Form.css"
+import useForm from "../../hooks/useForm"
+import { PATTERN_REGEX_EMAIL } from "../../utils/constants"
 
-function Register() {
+function Register({ isLoading, handleRegistrationUser }) {
+  // Хук useForm
+  const { enteredValues, errors, handleChangeInput, isFormValid } = useForm()
+
+  function handleEditUserInfo(event) {
+    event.preventDefault()
+    handleRegistrationUser({
+      name: enteredValues.name,
+      email: enteredValues.email,
+      password: enteredValues.password,
+    })
+  }
+
   return (
     <Form
-      title="Добро пожаловать!"
-      buttonText="Зарегистрироваться"
-      question="Уже зарегистрированы?"
-      linkText=" Войти"
-      link="/signin"
+    link="/signin"
+    title="Добро пожаловать!"
+    buttonText="Зарегистрироваться"
+    question="Уже зарегистрированы?"
+    linkText=" Войти"
+    onSubmit={handleEditUserInfo}
+    isDisablBtn={!isFormValid}
+    isLoading={isLoading}
     >
       <label className="form__label">
         Имя
@@ -20,10 +37,12 @@ function Register() {
           type="text"
           minLength="2"
           maxLength="40"
-          required="true"
           placeholder="имя" 
+          onChange={handleChangeInput}
+          value={enteredValues.name || ""}
+          required
         />
-        <span className="form__input-error">Заполните поле</span>
+        <span className="form__input-error">{errors.name}</span>
       </label>
       <label className="form__label">
         E-mail
@@ -32,10 +51,13 @@ function Register() {
           className="form__input"
           id="email-input"
           type="email"
-          required="true"
           placeholder="почта" 
+          onChange={handleChangeInput}
+          pattern={PATTERN_REGEX_EMAIL}
+          value={enteredValues.email || ""}
+          required
         />
-        <span className="form__input-error">Адрес электронной почты должен содержать символ "@".</span>
+        <span className="form__input-error">{errors.email}</span>
       </label>
       <label className="form__label">
         Пароль
@@ -44,10 +66,14 @@ function Register() {
           className="form__input"
           id="password-input"
           type="password"
-          required="true"
-          placeholder="пароль" 
+          placeholder="пароль"
+          onChange={handleChangeInput}
+          value={enteredValues.password || ""}
+          minLength="6"
+          maxLength="12"
+          required 
         />
-        <span className="form__input-error">Заполните поле</span>
+        <span className="form__input-error">{errors.password}</span>
       </label>
     </Form>
   )
