@@ -22,7 +22,7 @@ function MoviesCardList({
   // Количество отображаемых карточек с фильмами
   function handleShowMoviesWidthDisplay() {
     const display = window.innerWidth;
-    if (display > 1180) {
+    if (display >= 1023) {
       setShownMovies(12);
     } else if (display > 767) {
       setShownMovies(8);
@@ -46,7 +46,7 @@ function MoviesCardList({
   // Количество отображаемых карточек на экране, при клике на кнопку Ещё
   function handleShownMoviesCounterBtnClick() {
     const display = window.innerWidth;
-    if (display > 1180) {
+    if (display >= 1023) {
       setShownMovies(shownMovies + 3);
     } else if (display > 767) {
       setShownMovies(shownMovies + 2);

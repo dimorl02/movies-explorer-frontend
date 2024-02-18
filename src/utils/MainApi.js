@@ -1,7 +1,7 @@
 import { handleCheckResponseServer } from "./filmHelpers"
 
-export const BASE_URL = "https://api.movies.dimorl02.nomoredomainsmonster.ru"
-
+//export const BASE_URL = "https://api.movies.dimorl02.nomoredomainsmonster.ru"
+export const BASE_URL = "http://localhost:3000"
 export const register = (name, email, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
