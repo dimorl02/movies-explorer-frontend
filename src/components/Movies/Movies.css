@@ -1,0 +1,6 @@
+.movies {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /*outline: 4px solid rgb(33, 185, 91);*/
+}
