@@ -39,9 +39,12 @@ function MoviesCardList({
 
   useEffect(() => {
     setTimeout(() => {
-      window.addEventListener("resize", handleShowMoviesWidthDisplay);
-    }, 500);
-  });
+      window.addEventListener("resize", handleShowMoviesWidthDisplay)
+    }, 500)
+    return () => {
+      window.removeEventListener("resize", handleShowMoviesWidthDisplay)
+    }
+  })
 
   // Количество отображаемых карточек на экране, при клике на кнопку Ещё
   function handleShownMoviesCounterBtnClick() {
