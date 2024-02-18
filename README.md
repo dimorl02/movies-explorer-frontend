@@ -23,7 +23,7 @@
 - https://github.com/dimorl02/movies-explorer-frontend
 
 ### ССылка на пуллреквест в ветке LEVEL-3:
-- https://github.com/dimorl02/movies-explorer-frontend/pull/1
+- https://github.com/dimorl02/movies-explorer-frontend/pull/2
 
 ### ССылка на frontend:
 https://movies.dimorl02.nomoredomainsmonster.ru
