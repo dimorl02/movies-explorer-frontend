@@ -22,6 +22,8 @@
 }
 
 .not-found__button {
+  border: none;
+  background-color: transparent;
   margin-top: 184px;
   margin-bottom: 60px;
   min-height: 17px;
